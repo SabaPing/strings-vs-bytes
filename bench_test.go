@@ -6,8 +6,6 @@ import (
 	"testing"
 )
 
-var result interface{}
-
 //BenchmarkBytesToStrings convert a []bytes in a string
 //https://golang.org/pkg/bytes/#Compare
 func BenchmarkBytesToStrings(b *testing.B) {
@@ -21,7 +19,7 @@ func BenchmarkBytesToStrings(b *testing.B) {
 		r = string(s1)
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkBytesCompareSame compare 2 []bytes.
@@ -38,7 +36,7 @@ func BenchmarkBytesCompareSame(b *testing.B) {
 		r = bytes.Compare(s1, s2)
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkBytesCompareDifferent compare 2 []bytes.
@@ -55,7 +53,7 @@ func BenchmarkBytesCompareDifferent(b *testing.B) {
 		r = bytes.Compare(s1, s2)
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkStringsCompareSame compare 2 strings.
@@ -72,7 +70,7 @@ func BenchmarkStringsCompareSame(b *testing.B) {
 		r = strings.Compare(s1, s2)
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkStringsCompareDifferent compare 2 strings.
@@ -89,7 +87,7 @@ func BenchmarkStringsCompareDifferent(b *testing.B) {
 		r = strings.Compare(s1, s2)
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkBytesContains check contains method
@@ -106,7 +104,7 @@ func BenchmarkBytesContains(b *testing.B) {
 		r = bytes.Contains(s1, s2)
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkStringsContains check contains method
@@ -123,7 +121,7 @@ func BenchmarkStringsContains(b *testing.B) {
 		r = strings.Contains(s1, s2)
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkBytesIndex check contains index
@@ -140,7 +138,7 @@ func BenchmarkBytesIndex(b *testing.B) {
 		r = bytes.Index(s1, s2)
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkStringIndex check contains index
@@ -157,7 +155,7 @@ func BenchmarkStringIndex(b *testing.B) {
 		r = strings.Index(s1, s2)
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkBytesReplace check replace method
@@ -175,7 +173,7 @@ func BenchmarkBytesReplace(b *testing.B) {
 		r = bytes.Replace(s1, s2, s3, -1)
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkStringsReplace check replace method
@@ -193,7 +191,7 @@ func BenchmarkStringsReplace(b *testing.B) {
 		r = strings.Replace(s1, s2, s3, -1)
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkBytesConcat concats 2 bytes
@@ -223,7 +221,7 @@ func BenchmarkStringsConcat2(b *testing.B) {
 		r = s1 + s2
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkStringsJoin joins 2 strings
@@ -240,7 +238,7 @@ func BenchmarkStringsJoin2(b *testing.B) {
 		r = strings.Join(j, "")
 	}
 
-	result = r
+	_ = r
 }
 
 //BenchmarkMapHints bench mymap[string(abytes)]
@@ -257,7 +255,7 @@ func BenchmarkMapHints(b *testing.B) {
 		v, _ = mymap[string(abytes)]
 	}
 
-	result = v
+	_ = v
 }
 
 //BenchmarkMapsHints_Dont bench key := string(abytes)
@@ -276,6 +274,5 @@ func BenchmarkMapsHints_Dont(b *testing.B) {
 		v, _ = mymap[key]
 	}
 
-	result = v
-
+	_ = v
 }
