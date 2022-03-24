@@ -1,5 +1,7 @@
 # strings-vs-bytes
 ```bash
+go test -bench=.
+
 BenchmarkBytesToStrings-4            	50000000	        20.5 ns/op	      32 B/op	       1 allocs/op
 BenchmarkBytesCompareSame-4          	300000000	         4.44 ns/op	       0 B/op	       0 allocs/op
 BenchmarkBytesCompareDifferent-4     	300000000	         4.57 ns/op	       0 B/op	       0 allocs/op
